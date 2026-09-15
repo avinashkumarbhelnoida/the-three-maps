@@ -1,0 +1,63 @@
+{
+  "product": "THE THREE MAPS",
+  "release": "1.0.0",
+  "release_candidate": "1.0.0-rc1",
+  "status": "V1_CORE_RELEASE",
+  "freeze_id": "ARCH-FREEZE-201.81U",
+  "phase": "PHASE_V_COMPLETE",
+  "milestones": [
+    "201.81U",
+    "201.81V",
+    "201.81W"
+  ],
+  "software_core_releaseable": true,
+  "unrestricted_production_ready": false,
+  "tests": {
+    "validated": 220,
+    "note": "220 tests passing at V1 release validation."
+  },
+  "golden_dataset": {
+    "id": "GDS-001",
+    "version": "GD-0.2.0",
+    "cases": 45
+  },
+  "blocking_gates": [
+    {
+      "id": "ONT",
+      "name": "Authoritative 20-theme / 200-sub-theme catalogue",
+      "passed": false,
+      "detail": "Authoritative catalogue is not loaded"
+    },
+    {
+      "id": "IDP",
+      "name": "External production identity provider",
+      "passed": false,
+      "detail": "Deployment dependency"
+    },
+    {
+      "id": "TLS",
+      "name": "TLS termination",
+      "passed": false,
+      "detail": "Deployment dependency"
+    },
+    {
+      "id": "DB",
+      "name": "Managed production database",
+      "passed": false,
+      "detail": "SQLite reference adapter only"
+    },
+    {
+      "id": "SECRETS",
+      "name": "Production secret management",
+      "passed": false,
+      "detail": "Deployment dependency"
+    },
+    {
+      "id": "PALM",
+      "name": "Secure palm-image storage/upload lifecycle",
+      "passed": false,
+      "detail": "Deployment dependency"
+    }
+  ],
+  "source_tree_sha256": "7a796abc58b3013f2c28ac82828e8ac697867421dd16aa1ff509d86809cff886"
+}

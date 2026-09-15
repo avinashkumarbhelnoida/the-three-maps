@@ -1,0 +1,384 @@
+{
+  "dataset_id": "GDS-001",
+  "version": "GD-0.2.0",
+  "purpose": "Canonical regression scenarios for THE THREE MAPS decision architecture.",
+  "cases": [
+    {
+      "id": "G-001",
+      "category": "relationship",
+      "name": "insufficient",
+      "expected": {
+        "relationship": "S0"
+      }
+    },
+    {
+      "id": "G-002",
+      "category": "relationship",
+      "name": "single_map_signal",
+      "expected": {
+        "relationship": "S1"
+      }
+    },
+    {
+      "id": "G-003",
+      "category": "relationship",
+      "name": "two_map_convergence",
+      "expected": {
+        "relationship": "S2"
+      }
+    },
+    {
+      "id": "G-004",
+      "category": "relationship",
+      "name": "three_map_convergence",
+      "expected": {
+        "relationship": "S3"
+      }
+    },
+    {
+      "id": "G-005",
+      "category": "relationship",
+      "name": "triangulated_reinforcement",
+      "expected": {
+        "relationship": "S4"
+      }
+    },
+    {
+      "id": "G-006",
+      "category": "relationship",
+      "name": "qualified_convergence",
+      "expected": {
+        "relationship": "S5"
+      }
+    },
+    {
+      "id": "G-007",
+      "category": "contradiction",
+      "name": "meaningful_tension",
+      "expected": {
+        "contradiction": "S6",
+        "fusion_contradiction_penalty": 0.0
+      }
+    },
+    {
+      "id": "G-008",
+      "category": "contradiction",
+      "name": "formal_contradiction",
+      "expected": {
+        "contradiction": "S7",
+        "fusion_penalty_applies": true
+      }
+    },
+    {
+      "id": "G-009",
+      "category": "axis",
+      "name": "a_one_sided_support",
+      "expected": {
+        "direction": "A_ONE_SIDED_SUPPORT"
+      }
+    },
+    {
+      "id": "G-010",
+      "category": "axis",
+      "name": "b_one_sided_support",
+      "expected": {
+        "direction": "B_ONE_SIDED_SUPPORT"
+      }
+    },
+    {
+      "id": "G-011",
+      "category": "axis",
+      "name": "a_dominant",
+      "expected": {
+        "direction": "A_DOMINANT"
+      }
+    },
+    {
+      "id": "G-012",
+      "category": "axis",
+      "name": "b_dominant",
+      "expected": {
+        "direction": "B_DOMINANT"
+      }
+    },
+    {
+      "id": "G-013",
+      "category": "axis",
+      "name": "meaningful_tie",
+      "expected": {
+        "direction": "MEANINGFUL_TIE"
+      }
+    },
+    {
+      "id": "G-014",
+      "category": "axis",
+      "name": "balanced",
+      "expected": {
+        "direction": "BALANCED"
+      }
+    },
+    {
+      "id": "G-015",
+      "category": "axis",
+      "name": "insufficient_direction",
+      "expected": {
+        "direction": "INSUFFICIENT"
+      }
+    },
+    {
+      "id": "G-016",
+      "category": "system_score",
+      "name": "evaluated",
+      "expected": {
+        "status": "EVALUATED",
+        "numeric_score": true
+      }
+    },
+    {
+      "id": "G-017",
+      "category": "system_score",
+      "name": "partial_score",
+      "expected": {
+        "status": "PARTIAL",
+        "numeric_score": true,
+        "coverage_less_than": 1.0
+      }
+    },
+    {
+      "id": "G-018",
+      "category": "system_score",
+      "name": "unavailable_not_zero",
+      "expected": {
+        "status": "UNAVAILABLE",
+        "numeric_score": false,
+        "excluded_from_k": true
+      }
+    },
+    {
+      "id": "G-019",
+      "category": "system_score",
+      "name": "invalid_precedence",
+      "expected": {
+        "status": "INVALID",
+        "numeric_score": false
+      }
+    },
+    {
+      "id": "G-020",
+      "category": "fusion",
+      "name": "canonical_fusion_golden",
+      "expected": {
+        "base": 0.68281914,
+        "convergence_bonus": 0.13656383,
+        "independence_bonus": 0.05121144,
+        "contradiction_penalty": 0.09711741,
+        "raw_score": 0.773477,
+        "final_score": 77.35,
+        "label": "HIGH",
+        "data_confidence": 0.8706,
+        "coverage": 0.924399
+      }
+    },
+    {
+      "id": "G-021",
+      "category": "contradiction",
+      "name": "weak_opposition",
+      "expected": {
+        "contradiction": "NONE"
+      }
+    },
+    {
+      "id": "G-022",
+      "category": "contradiction",
+      "name": "duplicate_cluster",
+      "expected": {
+        "contradiction": "NONE"
+      }
+    },
+    {
+      "id": "G-023",
+      "category": "contradiction",
+      "name": "context_resolved",
+      "expected": {
+        "contradiction": "NONE"
+      }
+    },
+    {
+      "id": "G-024",
+      "category": "contradiction",
+      "name": "temporal_mismatch",
+      "expected": {
+        "contradiction": "NONE"
+      }
+    },
+    {
+      "id": "G-025",
+      "category": "contradiction",
+      "name": "semantic_mismatch",
+      "expected": {
+        "contradiction": "NONE"
+      }
+    },
+    {
+      "id": "G-026",
+      "category": "relationship",
+      "name": "two-map-with-third-unavailable",
+      "expected": {
+        "relationship": "S2"
+      }
+    },
+    {
+      "id": "G-027",
+      "category": "relationship",
+      "name": "two-map-with-third-balanced",
+      "expected": {
+        "relationship": "S2"
+      }
+    },
+    {
+      "id": "G-028",
+      "category": "relationship",
+      "name": "two-map-qualified-by-material-third",
+      "expected": {
+        "relationship": "S5"
+      }
+    },
+    {
+      "id": "G-029",
+      "category": "relationship",
+      "name": "opposing-streams-do-not-converge",
+      "expected": {
+        "relationship": "S0"
+      }
+    },
+    {
+      "id": "G-030",
+      "category": "axis",
+      "name": "a-support-below-threshold",
+      "expected": {
+        "direction": "INSUFFICIENT"
+      }
+    },
+    {
+      "id": "G-031",
+      "category": "axis",
+      "name": "near-tie",
+      "expected": {
+        "direction": "MEANINGFUL_TIE"
+      }
+    },
+    {
+      "id": "G-032",
+      "category": "system_score",
+      "name": "partial-retains-score",
+      "expected": {
+        "status": "PARTIAL",
+        "numeric_score": true
+      }
+    },
+    {
+      "id": "G-033",
+      "category": "system_score",
+      "name": "invalid-precedes-unavailable",
+      "expected": {
+        "status": "INVALID"
+      }
+    },
+    {
+      "id": "G-034",
+      "category": "fusion",
+      "name": "single-map-no-convergence-bonus",
+      "expected": {
+        "convergence_bonus": 0.0
+      }
+    },
+    {
+      "id": "G-035",
+      "category": "fusion",
+      "name": "unavailable-temporal-diagnostic-only",
+      "expected": {
+        "temporal_unavailable_is_non_scoring": true
+      }
+    },
+    {
+      "id": "G-036",
+      "category": "contradiction",
+      "name": "independence-below-threshold-is-s6",
+      "expected": {
+        "contradiction": "S6"
+      }
+    },
+    {
+      "id": "G-037",
+      "category": "contradiction",
+      "name": "balance-below-threshold-is-s6",
+      "expected": {
+        "contradiction": "S6"
+      }
+    },
+    {
+      "id": "G-038",
+      "category": "contradiction",
+      "name": "same-semantic-level-required",
+      "expected": {
+        "contradiction": "NONE"
+      }
+    },
+    {
+      "id": "G-039",
+      "category": "contradiction",
+      "name": "same-axis-required",
+      "expected": {
+        "contradiction": "NONE"
+      }
+    },
+    {
+      "id": "G-040",
+      "category": "contradiction",
+      "name": "two-distinct-streams-required",
+      "expected": {
+        "contradiction": "NONE"
+      }
+    },
+    {
+      "id": "G-041",
+      "category": "timing",
+      "name": "window-start-inclusive",
+      "expected": {
+        "timing": "ACTIVE"
+      }
+    },
+    {
+      "id": "G-042",
+      "category": "timing",
+      "name": "window-end-inclusive",
+      "expected": {
+        "timing": "ACTIVE"
+      }
+    },
+    {
+      "id": "G-043",
+      "category": "timing",
+      "name": "expired-window",
+      "expected": {
+        "timing": "EXPIRED"
+      }
+    },
+    {
+      "id": "G-044",
+      "category": "timing",
+      "name": "upcoming-window",
+      "expected": {
+        "timing": "UPCOMING"
+      }
+    },
+    {
+      "id": "G-045",
+      "category": "timing",
+      "name": "temporal-mismatch-not-contradiction",
+      "expected": {
+        "contradiction": "NONE"
+      }
+    }
+  ]
+}

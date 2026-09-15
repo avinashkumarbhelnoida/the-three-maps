@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b0b0c"><meta name="description" content="THE THREE MAPS — Astrology, Numerology and Palmistry interpreted as one structured system.">
+<title>THE THREE MAPS — Intelligence Interface</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=DM+Sans:wght@400;500;600;700&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/frontend/styles.css">
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="THE THREE MAPS home"><span class="brand-mark">III</span><span><b>THE THREE MAPS</b><small>FUSION INTELLIGENCE</small></span></a>
+  <nav class="desktop-nav"><a href="#how">How it works</a><a href="#insight">The Map</a><button id="new-reading" class="ghost-btn">New reading</button></nav>
+  <button class="menu-btn" id="menu-btn" aria-label="Open menu">☰</button>
+</header>
+<div class="mobile-menu" id="mobile-menu"><a href="#how">How it works</a><a href="#insight">The Map</a><button id="mobile-new">New reading</button></div>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-copy"><p class="kicker">ASTROLOGY · NUMEROLOGY · PALMISTRY</p><h1>Three maps.<br><em>One perspective.</em></h1><p class="hero-lead">A structured way to explore the patterns your three maps point toward — where they converge, where they differ, and what is active now.</p><button class="hero-cta" id="start-reading">Begin your map <span>↗</span></button></div>
+  <div class="hero-art" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div><div class="core">III</div><div class="node n1">A</div><div class="node n2">N</div><div class="node n3">P</div></div>
+</section>
+
+<section class="trust-strip"><span>SYMBOLIC · INTERPRETIVE · EVIDENCE-FIRST</span><span>YOUR DATA REMAINS YOURS</span><span>NO DETERMINISTIC PREDICTIONS</span></section>
+
+<section class="workspace" id="workspace">
+  <div class="stepper"><span class="step active" data-step="1">01 <b>YOUR DATA</b></span><i></i><span class="step" data-step="2">02 <b>YOUR QUESTION</b></span><i></i><span class="step" data-step="3">03 <b>YOUR MAP</b></span></div>
+
+  <section class="panel input-panel" id="input-step">
+    <div class="section-heading"><span class="index">01</span><div><p class="kicker">START HERE</p><h2>Tell us where to begin.</h2><p>Only the information needed for the selected maps is requested.</p></div></div>
+    <form id="analysis-form">
+      <div class="field-grid"><label>Full name<input id="name" maxlength="200" placeholder="Your name"></label><label>Date of birth<input id="birth_date" type="date"></label></div>
+      <div class="field-grid"><label>Birth time <span class="optional">optional</span><input id="birth_time" type="time"></label><label>Birth place coordinates <span class="optional">for astrology</span><div class="coord"><input id="latitude" type="number" step="any" placeholder="Latitude"><input id="longitude" type="number" step="any" placeholder="Longitude"></div></label></div>
+      <div class="map-selection"><div><p class="kicker">THE THREE MAPS</p><h3>Choose what you want to read.</h3></div><label class="map-toggle locked"><input type="checkbox" checked disabled><span><b>Numerology</b><small>Birth & name patterns</small></span><i>READY</i></label><label class="map-toggle"><input id="astrology" type="checkbox"><span><b>Astrology</b><small>Chart & timing signals</small></span><i>OPTIONAL</i></label><label class="map-toggle"><input id="palmistry" type="checkbox"><span><b>Palmistry</b><small>Upload comes next</small></span><i>IMAGE</i></label></div>
+      <div class="form-actions"><button type="submit" class="primary-btn">Continue <span>→</span></button><p id="form-error" class="error" hidden></p></div>
+    </form>
+  </section>
+
+  <section class="panel question-step hidden" id="question-step">
+    <button class="back-btn" id="back-data">← Back to data</button><div class="section-heading compact"><span class="index">02</span><div><p class="kicker">SET THE LENS</p><h2>What would you like to understand?</h2><p>The question determines which evidence is relevant. It does not change the underlying calculations.</p></div></div>
+    <div class="question-grid"><button class="question-card selected" data-question="self"><span>01</span><b>About me</b><small>Patterns, strengths & tensions</small></button><button class="question-card" data-question="relationships"><span>02</span><b>Relationships</b><small>Attachment, autonomy & connection</small></button><button class="question-card" data-question="career"><span>03</span><b>Career & work</b><small>Achievement, structure & direction</small></button><button class="question-card" data-question="now"><span>04</span><b>What’s happening now?</b><small>Current activation & timing</small></button><button class="question-card wide" data-question="custom"><span>05</span><b>Ask your own question</b><small>Bring one specific question to the map</small></button></div>
+    <label class="custom-question hidden" id="custom-question">Your question<textarea id="question" maxlength="500" placeholder="What pattern are you trying to understand?"></textarea></label>
+    <button class="primary-btn full" id="run-reading">Read the maps <span>↗</span></button>
+  </section>
+</section>
+
+<section class="reading hidden" id="reading">
+  <div class="reading-header"><div><p class="kicker">YOUR THREE MAPS</p><h2 id="reading-title">A first look at your pattern.</h2><p id="reading-subtitle">Validated signals, convergence and qualified tension.</p></div><button class="ghost-btn" id="reset-reading">Start over</button></div>
+  <div class="map-cards">
+    <article class="map-card astro"><div class="card-top"><span>ASTROLOGY</span><i id="astro-badge">AVAILABLE</i></div><div class="glyph">✦</div><h3 id="astro-value">—</h3><p id="astro-copy">Chart signal</p><div class="card-line"></div><small>WHAT · WHERE · WHEN</small></article>
+    <article class="map-card numerology"><div class="card-top"><span>NUMEROLOGY</span><i>AVAILABLE</i></div><div class="glyph">09</div><h3 id="num-value">—</h3><p id="num-copy">Life Path</p><div class="card-line"></div><small>BIRTH · NAME · CYCLE</small></article>
+    <article class="map-card palm"><div class="card-top"><span>PALMISTRY</span><i id="palm-badge">NOT PROVIDED</i></div><div class="glyph palm-glyph">∿</div><h3 id="palm-value">Awaiting image</h3><p>OBSERVE → COMPARE → CONFIRM</p><div class="card-line"></div><small>STRUCTURE · LINES · MARKINGS</small></article>
+  </div>
+
+  <section class="convergence-panel" id="insight"><div class="panel-label"><span>03</span> CONVERGENCE</div><div class="convergence-main"><div class="convergence-copy"><p class="micro-label">THE SIGNAL</p><h3 id="relationship-state">Reading the available maps…</h3><p id="relationship-copy">The system distinguishes clean convergence, qualified convergence and meaningful opposition.</p><div class="axis-pills" id="axis-pills"><span>Structure</span><span>Freedom</span><span>Attachment</span></div></div><div class="convergence-score"><div class="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" class="ring-bg"/><circle cx="60" cy="60" r="50" class="ring-value" id="ring-value"/></svg><strong id="fusion-score">—</strong></div><small>FUSION STRENGTH</small><b id="fusion-label">—</b></div></div></section>
+
+  <section class="insight-layout"><article class="insight-panel"><div class="panel-label"><span>04</span> THE INSIGHT</div><h3 id="explanation-title">Evidence before interpretation.</h3><p id="explanation-copy">Your interpretation will appear here after the structured results have been evaluated.</p><div class="insight-footer"><span id="timing-note">TIMING: —</span><span id="confidence-note">DATA CONFIDENCE: —</span></div></article><aside class="confidence-panel"><div><small>DATA CONFIDENCE</small><strong id="confidence">—</strong></div><div><small>EVIDENCE COVERAGE</small><strong id="coverage">—</strong></div><div><small>MAPS AVAILABLE</small><strong id="maps-count">—</strong></div></aside></section>
+
+  <section class="audit-panel"><div><div class="panel-label"><span>05</span> TRANSPARENCY</div><h3>Why did the system say this? <span class="audit-title">Audit Trail</span></h3><p>Every conclusion remains traceable to structured evidence and versioned calculations.</p></div><button class="secondary-btn" id="lineage-btn">View audit trail ↗</button><pre id="lineage" hidden></pre></section>
+</section>
+
+<section class="how" id="how"><div><p class="kicker">THE METHOD</p><h2>Not three reports.<br><em>One conversation between three maps.</em></h2></div><div class="how-grid"><article><span>01</span><h3>Signal</h3><p>Each map produces structured evidence without borrowing meaning from another system.</p></article><article><span>02</span><h3>Convergence</h3><p>Shared directional evidence is identified, while missing and opposing evidence remain explicit.</p></article><article><span>03</span><h3>Meaning</h3><p>Interpretation happens last — after evidence, timing, confidence and qualification are known.</p></article></div></section>
+
+<section class="closing"><p class="kicker">THE THREE MAPS</p><h2>Bring a question.<br><em>Leave with a perspective.</em></h2><button class="hero-cta" id="closing-cta">Begin your map <span>↗</span></button></section>
+</main>
+<footer><span>THE THREE MAPS</span><span>Symbolic / interpretive system · Not a scientific diagnostic or deterministic predictor.</span><span>V1.0.0</span></footer>
+</div>
+<script src="/frontend/app.js"></script>
+</body></html>

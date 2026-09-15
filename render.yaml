@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: the-three-maps
+    runtime: python
+    plan: free
+    buildCommand: pip install -e .
+    startCommand: uvicorn three_maps.api.app:app --host 0.0.0.0 --port $PORT --workers 1
+    healthCheckPath: /health
+    envVars:
+      - key: THE_THREE_MAPS_ENV
+        value: development
+        # Left as "development" on purpose: the app only enables the
+        # THE_THREE_MAPS_WEB_TOKEN / THE_THREE_MAPS_AUTH_TOKENS fallback path
+        # when a real token is configured below, so this stays safe without
+        # also having to pre-fill THE_THREE_MAPS_ALLOWED_ORIGINS with a URL
+        # Render hasn't assigned yet.
+      - key: THE_THREE_MAPS_WEB_TOKEN
+        generateValue: true
+        # Render generates a random secret at deploy time. The backend reads
+        # it and the frontend receives it server-side (see api/app.py's
+        # frontend_root) -- it is never hardcoded in the public app.js.
+      - key: THE_THREE_MAPS_RATE_LIMIT_PER_MINUTE
+        value: "120"
+      - key: THE_THREE_MAPS_MAX_BODY_BYTES
+        value: "2000000"
+    # No THE_THREE_MAPS_DB_PATH is set, so the app uses its default
+    # (":memory:"). Render's free web services have no persistent disk, so a
+    # SQLite *file* would be wiped on every restart/redeploy anyway -- an
+    # in-memory database gets the same real-world durability with one fewer
+    # moving part. If you attach a paid persistent disk later, set
+    # THE_THREE_MAPS_DB_PATH to a path on that disk to get durability across
+    # restarts.

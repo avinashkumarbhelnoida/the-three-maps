@@ -1,0 +1,44 @@
+{
+  "api_version": "AV-0.2.0",
+  "blocking_gates": [
+    "authoritative 20 Themes / 200 Sub-Themes ontology",
+    "production identity provider",
+    "TLS",
+    "production rate limiting",
+    "production CORS allowlist",
+    "secret management",
+    "production database adapter",
+    "secure palm-image storage/upload lifecycle"
+  ],
+  "golden_dataset": {
+    "cases": 25,
+    "id": "GDS-001",
+    "version": "GD-0.1.0"
+  },
+  "milestone": "201.80M",
+  "phase": "PHASE_IV_COMPLETE",
+  "product": "THE THREE MAPS",
+  "production_ready": false,
+  "release": "0.1.0-rc1",
+  "release_scope": "controlled MVP evaluation/internal pilot",
+  "status": "MVP_CORE_RELEASE_CANDIDATE",
+  "test_status": {
+    "failed": 0,
+    "passed": 166
+  },
+  "tests_passing": 218,
+  "thresholds": {
+    "tauB": 0.7,
+    "tauD": 0.25,
+    "tauI": 0.5,
+    "tauP": 0.6,
+    "tauS": 0.6
+  },
+  "versions": {
+    "calculation": "CV-0.1.0",
+    "explanation": "EV-0.1.0",
+    "methodology": "MV-0.1.0",
+    "ontology": "OV-0.1.0",
+    "presentation": "PV-0.1.0"
+  }
+}
